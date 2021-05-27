@@ -25,12 +25,9 @@ namespace Nano_Paste_MVC.Controllers
             {
                 List<PasteModel> model = new List<PasteModel>();
                 model.Add(new PasteModel("AE35", "Wow this is really Cool\n\n\nReality can be whatever I want", DateTime.Now));
-                model.Add(new PasteModel("AE36", "Wow this is really Cool\n\n\nReality can be whatever I want", DateTime.Now));
-                model.Add(new PasteModel("AE37", "Wow this is really Cool\n\n\nReality can be whatever I want", DateTime.Now));
-                model.Add(new PasteModel("AE39", "Wow this is really Cool\n\n\nReality can be whatever I want", DateTime.Now));
 
 
-                return Json(model);
+                return Json(model[0]);
                 //return View("ViewPaste", pasteModel);
             }
             else

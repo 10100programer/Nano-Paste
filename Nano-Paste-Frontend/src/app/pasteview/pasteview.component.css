@@ -1,4 +1,19 @@
 .main-text-field{
     background-color: silver;
     box-shadow: 3px 3px black;
+    margin: 12px;
+    padding:10px;
+    font-family: monospace;
+}
+.pasteview-section{
+    background-color: brown;
+}
+.pasteview-title{
+    margin-left: 12px;
+    margin-top: 0px;
+    padding-top: 12px;
+}
+hr{
+    padding-top: 0px;
+    margin-bottom: 0%;
 }
