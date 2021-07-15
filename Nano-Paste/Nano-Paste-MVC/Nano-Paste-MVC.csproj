@@ -5,4 +5,8 @@
     <RootNamespace>Nano_Paste_MVC</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>
