@@ -10,4 +10,11 @@ The Idea is simple, have a place where you can paste data to, and get a url retu
 * Then I would like to try Angular JS and see how it will appear
 * I want to support mysql/mariadb, and MicrosoftSQL
 More to come as I think of it
+
+While still in development this is more of the look we are going for.
+![image](https://user-images.githubusercontent.com/23159784/125730586-e18b78ce-b63d-4f66-b9e1-4845d223da77.png)
+
+
+
+Old current master
 ![image](https://user-images.githubusercontent.com/23159784/119759308-a7271080-be6d-11eb-9242-ad2645d375e0.png)
