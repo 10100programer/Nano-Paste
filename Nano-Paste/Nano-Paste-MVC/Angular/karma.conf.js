@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/Nano-Paste-Frontend'),
+      dir: require('path').join(__dirname, './coverage/nanopaste'),
       subdir: '.',
       reporters: [
         { type: 'html' },

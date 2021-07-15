@@ -1,3 +1,13 @@
-<app-banner></app-banner>
-<app-pasteview></app-pasteview>
-<app-footer></app-footer>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Nano Paste</span>
+      <span class="example-spacer"></span>
+      <a matTooltip="Fork us on Github" mat-icon-button class="example-icon" href="https://github.com/10100programer/Nano-Paste">
+        <mat-icon class="fa-2x" fontSet="fab" fontIcon="fa-github"></mat-icon>
+      </a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

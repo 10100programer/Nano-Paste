@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PasteviewComponent } from './pasteview.component';
+import { AddPasteComponent } from './add-paste.component';
 
-describe('PasteviewComponent', () => {
-  let component: PasteviewComponent;
-  let fixture: ComponentFixture<PasteviewComponent>;
+describe('AddPasteComponent', () => {
+  let component: AddPasteComponent;
+  let fixture: ComponentFixture<AddPasteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PasteviewComponent ]
+      declarations: [ AddPasteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PasteviewComponent);
+    fixture = TestBed.createComponent(AddPasteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
