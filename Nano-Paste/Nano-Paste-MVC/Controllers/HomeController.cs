@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Nano_Paste_MVC.Models;
 using System;
@@ -23,6 +24,28 @@ namespace Nano_Paste_MVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
+        [HttpPost]
+        [Route("/API/MkPaste")]
+        public IActionResult CreateNewPaste(PasteModel paste)
+        {
+            PasteModel model = paste;
+            return StatusCode(501);
+        }
+        [HttpGet]
+        [Route("/API/getPaste/{PID}")]
+        [Route("/API/GetSampleData")]
+        [EnableCors("AllowCrossOrigin")]
+        public JsonResult RetreveSinglePaste(string PID = "0")
+        {
+            PasteModel model = new PasteModel();
+            model.LikeCount = 12;
+            model.NanoTrack = "127.0.0.1";
+            model.PasteData = "for\nscore\nand\nseven\nyears\nago...";
+            model.PasteID = PID;
+            model.PasteTime = DateTime.Now;
+            model.PasteUser = "Anon";
+            model.PostTitle = "MIT License";
+            return new JsonResult(model);
+        }
     }
 }

@@ -1,0 +1,21 @@
+<div *ngIf="isLoaded | async">
+<mat-card class="pastecard">
+    <mat-card-header>
+      <mat-card-title>Title:{{model.PostTitle | async}}</mat-card-title>
+      <mat-card-subtitle>07/16/2021 11:35PM GMT-4</mat-card-subtitle>
+      <mat-card-subtitle>Anon</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <pre>{{model.PasteData}}</pre>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click) = "pressLikeBtn()" mat-button [disabled]="likedisabled"><mat-icon color="primary" class="fa-2x" fontSet="far" fontIcon="fa-thumbs-up"></mat-icon></button>
+      <mat-label>{{likecount}}</mat-label>
+      <button (click) = "copyLinkToClipboard()" mat-button><mat-icon color="primary" class="fa-2x" fontSet="fas" fontIcon="fa-share"></mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+  
+  <div class="disclaimer">
+      <p>All works are owned by their respective owners.</p>
+  </div>
+</div>

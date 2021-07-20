@@ -24,7 +24,10 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AddPasteComponent } from './add-paste/add-paste.component';
 import { ViewPasteComponent } from './view-paste/view-paste.component';
 import {MatCardModule} from '@angular/material/card';
-import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatTabsModule} from '@angular/material/tabs';
+import { PasteComponent } from './paste/paste.component'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     LatestEntriesComponent,
     HomepageComponent,
     AddPasteComponent,
-    ViewPasteComponent
+    ViewPasteComponent,
+    PasteComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatToolbarModule,
     MatTooltipModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSnackBarModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
