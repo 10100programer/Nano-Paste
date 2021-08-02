@@ -12,7 +12,7 @@ export class DatahandlerService {
   constructor(private http: HttpClient) { }
   configUrl:any = 'https://localhost:44322/API/getsampledata';
   public data:any;
-  getPaste()
+  getPaste():Observable<PasteObject>
   {
     return this.http.get<PasteObject>(this.configUrl);
   }

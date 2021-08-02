@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { DatahandlerService } from '../datahandler.service';
 import { PasteObject } from '../models/pasteobject';
 
@@ -13,22 +13,29 @@ export class PasteComponent implements OnInit {
   likecount:number = 1;
   likedisabled:boolean =false;
   modeldataObservable : Observable<PasteObject> = new Observable<PasteObject>();
-  model:PasteObject = new PasteObject(0,"","","","","","");
-  public isLoaded:Promise<boolean>;
-
+  model:PasteObject = new PasteObject(55,"A","A","A","A","A","A");
+  public isLoading: boolean = false;
+  ObjectEmitter = new BehaviorSubject<PasteObject>(this.model);
   constructor(private _snackBar: MatSnackBar, private http:DatahandlerService) { 
-    this.isLoaded = new Promise<boolean>(a => null);
   }
 
   ngOnInit(): void {
     this.likecount =514;
-    this.modeldataObservable = this.http.getPaste();
+    //this.modeldataObservable = this.http.getPaste();
+    
+
     this.http.getPaste().subscribe( a => {
       this.model = a;
+      this.ObjectEmitter.next(this.model);
       console.log(this.model);
-      this.isLoaded = Promise.resolve(true);
     });
-    
+    this.MakeRequest();
+  }
+  async MakeRequest()
+  {
+    const response = await this.http.getPaste().toPromise();
+    this.model.PostTitle = response.PostTitle;
+    this.isLoading =true;
   }
   pressLikeBtn(){
     this.likecount++;
